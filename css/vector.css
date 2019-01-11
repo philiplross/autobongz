@@ -1,0 +1,196 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    background: #EEF0F5;
+  }
+  
+  .top {
+    background: #0000FF;
+    height: 100%;
+    width: 60%;
+    float: center;
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+  
+    animation: slideAcross 1s ease-out 1.5s;
+    animation-fill-mode: backwards;
+  }
+  
+  .header {
+    text-transform: uppercase;
+    color: #FFF;
+    padding: 5%;
+  
+    animation: fadeIn 1s ease-out 1.7s;
+    animation-fill-mode: backwards;
+    backface-visibility: hidden;
+  }
+  .header-text-main {
+    font-size: 1.4em;
+    letter-spacing: 3px;
+    display: block;
+    font-weight: 200;
+  }
+  
+  .header-text-sub {
+    font-size: .6em;
+    letter-spacing: 1px;
+    display: block;
+    color: #CCC;
+  }
+  
+  .links {
+    font-size: 2em;
+    padding: 5%;
+  }
+  
+  .links a {
+    color: #FFF;
+    transition: .4s ease-out;
+    padding: 3%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .4);
+  }
+  
+  .links a.linkedin {
+    animation: fadeInFromBottom 1s ease-out 2s;
+    animation-fill-mode: backwards;
+  }
+  
+  .links a.github {
+    animation: fadeInFromBottom 1s ease-out 2.3s;
+    animation-fill-mode: backwards;
+  }
+  
+  .links a.codepen {
+    animation: fadeInFromBottom 1s ease-out 2.6s;
+    animation-fill-mode: backwards;
+  }
+  
+  .links a.email {
+    animation: fadeInFromBottom 1s ease-out 2.9s;
+    animation-fill-mode: backwards;
+  }
+  
+  .bottom {
+    height: 100%;
+    width: 40%;
+    float: right;
+    position: relative;
+    text-align: center;
+  }
+  
+  .bottom-text {
+    font-weight: 300;
+    padding-top: 35%;
+    transform: translateX(-10%);
+  
+    animation: fadeInFromLeft 1s ease-out 3s;
+    animation-fill-mode: backwards;
+    backface-visibility: hidden;
+  }
+  
+  .bottom-text a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .giraffe-img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  /*   left: 40%; */
+    transform: translateX(-50%);
+    z-index: -1;
+  
+    animation: fadeInAndSlideRight 2.5s ease-out;
+    animation-fill-mode: backwards;
+    backface-visibility: hidden;
+  }
+  
+  .links a:hover {
+    color: #FFF;
+    transform: translateY(-10%);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, .3);
+  }
+  .bottom-text a:hover {
+    color: #0000FF;
+  }
+  
+  @keyframes slideAcross {
+    0% {
+      clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    70% {
+      opacity: 1;
+      transform: translateX(-4px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(-10px);
+    }
+  }
+  @keyframes fadeInAndSlideRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes fadeInFromBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+  
+  @media (min-width: 800px) {
+    .header {
+      padding: 10%;
+    }
+    .header-text-main {
+      padding-bottom: 2%;
+    }
+    .links {
+      padding: 0;
+      padding-left: 10%;
+    }
+    .links a {
+      padding: 2%;
+    }
+    .bottom-text {
+      padding-top: 20%;
+    }
+  }
